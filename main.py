@@ -306,13 +306,16 @@ def get_data_task3():
 def main():
     warnings.filterwarnings("ignore")
     date = time.strftime("%Y-%m-%d", time.localtime())
-    print("---开始下载截止到"+date+"的数据---")
+    print("---开始下载截止到"+date+"发布了的数据---")
     print("---开始下载'工业主要产品产量及增长速度数据'数据---")
     df_task1 = get_data_task1()
+    print("最新数据是到" + str(int(df_task1.columns.values[1])))
     print("---开始下载'工业分大类行业增加值增长速度'数据---")
     df_task2 = get_data_task2()
+    print("最新数据是到" + str(int(df_task2.columns.values[1])))
     print("---开始下载'全国规模以上企业利润'数据---")
     df_task3 = get_data_task3()
+    print("最新数据是到" + str(df_task3.columns.values[1][:6]))
     print("---下载数据完毕---")
 
     date = time.strftime("%Y-%m-%d", time.localtime())
